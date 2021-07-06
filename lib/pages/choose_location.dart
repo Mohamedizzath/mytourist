@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Location extends StatefulWidget {
-  const Location({Key key}) : super(key: key);
+  //const Location({Key key}) : super(key: key);
 
   @override
   _LocationState createState() => _LocationState();
