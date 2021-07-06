@@ -21,6 +21,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final mdl = Provider.of<LocationDataProvider>(context);
     return Scaffold(
+      backgroundColor: Color.fromRGBO(30, 30, 30, 1),
       appBar: AppBar(
         title: Text(
           'MyTourist',
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
         child: ListView.builder(
             padding: EdgeInsets.all(4.0),
             itemCount: mdl.locationList.length,
