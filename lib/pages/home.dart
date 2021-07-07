@@ -45,6 +45,7 @@ class _HomeState extends State<Home> {
                 name: location.name,
                 shortDetails: location.shortDetails,
                 image: location.image,
+                details: location.details,
               );
             }),
       ),
@@ -56,9 +57,10 @@ class LocationCard extends StatelessWidget {
   final String image;
   final String name;
   final String shortDetails;
+  final String details;
 
   LocationCard(
-      {required this.image, required this.name, required this.shortDetails});
+      {required this.image, required this.name, required this.shortDetails, required this.details});
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +127,7 @@ class LocationCard extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => Location(),
                     settings: RouteSettings(
-                      arguments: LocationModel(name: this.name, shortDetails: this.shortDetails, image: this.image),
+                      arguments: LocationModel(name: this.name, shortDetails: this.shortDetails, image: this.image, details: this.details),
                     )),
                   );
                 },

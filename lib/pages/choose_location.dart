@@ -39,7 +39,7 @@ class _LocationState extends State<Location> {
               ),
             ),
             Text(
-              location.shortDetails,
+              location.details,
               style: TextStyle(
                 color: Color.fromRGBO(30, 30, 30, 1),
                 fontFamily: 'Oswald',
