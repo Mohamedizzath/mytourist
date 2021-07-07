@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mytourist/main.dart';
 import 'package:mytourist/models/location_model.dart';
@@ -112,7 +113,8 @@ class LocationCard extends StatelessWidget {
             height: 250,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(image), fit: BoxFit.fitWidth),
+                  image: NetworkImage(image),
+                  fit: BoxFit.fitWidth),
             ),
           ),
           SizedBox(
@@ -125,7 +127,7 @@ class LocationCard extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Location(),
+                    CupertinoPageRoute(builder: (context) => Location(),
                     settings: RouteSettings(
                       arguments: LocationModel(name: this.name, shortDetails: this.shortDetails, image: this.image, details: this.details),
                     )),
