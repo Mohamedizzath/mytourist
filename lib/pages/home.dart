@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mytourist/main.dart';
 import 'package:mytourist/models/location_model.dart';
+import 'package:mytourist/pages/choose_location.dart';
 import 'package:mytourist/providers/location_data_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -72,27 +73,34 @@ class LocationCard extends StatelessWidget {
           SizedBox(
             height: 5.0,
           ),
-          Text(
-            name,
-            style: TextStyle(
-              color: Color.fromRGBO(30, 30, 30, 1),
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              fontFamily: 'Oswald',
-            ),
-          ),
-          SizedBox(
-            height: 3.0,
-          ),
-          Text(
-            shortDetails,
-            style: TextStyle(
-              color: Color.fromRGBO(30, 30, 30, 1),
-              fontSize: 15.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              fontFamily: 'Oswald',
+          Container(
+            padding: EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  name,
+                  style: TextStyle(
+                    color: Color.fromRGBO(30, 30, 30, 1),
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
+                    fontFamily: 'Oswald',
+                  ),
+                ),
+                SizedBox(
+                  height: 3.0,
+                ),
+                Text(
+                  shortDetails,
+                  style: TextStyle(
+                    color: Color.fromRGBO(30, 30, 30, 1),
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0,
+                    fontFamily: 'Oswald',
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(
@@ -112,7 +120,15 @@ class LocationCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Location(),
+                    settings: RouteSettings(
+                      arguments: LocationModel(name: this.name, shortDetails: this.shortDetails, image: this.image),
+                    )),
+                  );
+                },
                 icon: const Icon(Icons.arrow_forward),
                 tooltip: 'More details',
               )
