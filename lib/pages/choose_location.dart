@@ -14,7 +14,7 @@ class _LocationState extends State<Location> {
     final location =
         ModalRoute.of(context)!.settings.arguments as LocationModel;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text(
           'MyTourist',
@@ -102,6 +102,9 @@ class _LocationState extends State<Location> {
                   ),
                 ),
               ],
+            ),
+            Card(
+
             ),
           ],
         ),
